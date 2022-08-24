@@ -18,23 +18,18 @@ ul {
     overflow: hidden;
 }
 body {
-    background: linear-gradient(to right, #141718bf 0%, #232526 100%);
+    background: linear-gradient(to right, #a0a6a8bf 0%, #232526 100%);
 
 }
 .glowBox {
     display: block;
-    /* Make the box in the middle of the screen */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /*margin-right: auto*/;
-    width: 50%;
+    margin: 50px auto 0px auto;
     box-shadow: 0px 0px 10px #fff;
     width: 300px;
     height: 300px;
     border-radius: 50%;
     background-color: rgb(250, 245, 245);
+    z-index: -1;
     box-shadow: 
     inset 0 0 50px #fff,
     inset 20px 0 80px #f0f,
@@ -45,13 +40,48 @@ body {
     -10px 0 80px #f0f,
     10px 0 80px #0ff;
 }
+@media only screen and (max-width: 450px) {
+    .glowBox {
+        width: 50px;
+        height: 50px;
+    }
+}
+.content {
+    text-align: center;
+    position: relative;
+    font-family: "Silkscreen", serif;
+}
+
+.container{
+    width: auto;
+    height: auto;
+}
+
+
+.project img {
+    position: static;
+    right: 50px;
+    width: 100%;
+    height: auto;
+    /* Make image in the middle of screen*/
+    margin-left: 20px;
+}
+.content img{
+    position:absolute;
+    width: 50px;
+    height: 50px;
+    top:10%;
+}
 .navBar {
+    top: 0;
     padding: 0;
     width: 100%;
+    position: fixed;
 }
 /* make a horizontal navbar */
 .navBar li {
-    float: right;
+    float: left;
+    
 }
 .navBar li a {
     display: block;
