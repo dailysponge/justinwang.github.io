@@ -1,94 +1,182 @@
-a { 
-    color: black;
-    text-decoration: none;
+a {
+  color: black;
+  text-decoration: none;
 }
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 body {
-    background: linear-gradient(to right, #a0a6a8bf 0%, #232526 100%);
+  background: linear-gradient(to right, #a0a6a8bf 0%, #232526 100%);
 }
-.glowBox {
-    display: block;
-    margin: 50px auto 0px auto;
-    box-shadow: 0px 0px 10px #fff;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: rgb(250, 245, 245);
-    /* z-index: -1; */
-    box-shadow: 
-    inset 0 0 50px #fff,
-    inset 20px 0 80px #f0f,
-    inset -20px 0 80px #0ff,
-    inset 20px 0 300px #f0f,
-    inset -20px 0 300px #0ff,
-    0 0 50px #fff,
-    -10px 0 80px #f0f,
-    10px 0 80px #0ff;
+.container-orb {
+  width: 300px;
+  height: 300px;
 }
-@media only screen and (max-width: 450px) {
-    .glowBox {
-        width: 50px;
-        height: 50px;
-    }
+.orb {
+  animation: spin 4s linear infinite;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  margin-top: 140px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #fff, inset 20px 0 60px violet, inset -20px 0 60px blue,
+    inset 20px 0 300px violet, inset -20px 0 300px blue, 0 0 50px #fff, -10px 0 60px violet,
+    10px 0 60px blue;
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 .content {
-    text-align: center;
-    position: relative;
-    font-family: "Silkscreen", serif;
+  text-align: center;
+  position: relative;
+  font-family: "Silkscreen", serif;
+}
+.experience {
+  text-align: center;
+  position: relative;
+  font-family: "Silkscreen", serif;
+  margin-top: 50px;
 }
 
-.container{
-    display: flex;
-    justify-content: space-between;
-    width: 500px;
-    margin: auto
-    
-}
 .project {
-    width: 20%;
-    float: left;
-    box-sizing: border-box;
-    box-shadow: 5px 5px black;
-    border-radius: 10%;
+  width: 20%;
+  float: left;
+  box-sizing: border-box;
+  box-shadow: 5px 5px black;
+  border-radius: 10%;
 }
 .project:active {
-    box-shadow: 2px 2px black;
-    transform: translateY(3px);
+  box-shadow: 2px 2px black;
+  transform: translateY(3px);
 }
 .project img {
-    overflow: hidden; 
-    width: 100px;
-    height: 100px;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
 }
 
-.navBar {
-    top: 0;
-    padding: 0;
-    width: 100%;
-    position: fixed;
+:root {
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
 }
-/* make a horizontal navbar */
-.navBar li {
-    float: left;
+.card-background {
+  background-color: #a0a6a8bf;
 }
-.navBar li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.card-body {
+  background-color: #a0a6a8bf;
 }
-.navBar li a:hover {
-    background-color: #ddd;
+/* ====================== */
+.card-special {
+  background: #191c29;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  color: rgb(88 199 250 / 0%);
+  cursor: pointer;
+  font-family: cursive;
+}
+
+.card-special:hover {
+  color: rgb(88 199 250 / 100%);
+  transition: color 1s;
+}
+.card-special:hover:before,
+.card-special:hover:after {
+  animation: none;
+  opacity: 0;
+}
+
+.card-special::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.card-special::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+a {
+  color: #212534;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+/* ========================= */
+
+.img-container {
+  width: 150px;
+  height: 150px;
+}
+
+#govtech {
+  height: 80%;
+  width: auto;
+}
+a {
+  color: #212534;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 2rem;
 }
 #adventurer {
-    border-radius: 10%;
+  border-radius: 10%;
 }
-#poker{
-    width: 100%
+#poker {
+  width: 100%;
 }

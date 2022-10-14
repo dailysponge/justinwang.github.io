@@ -6,27 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen" />
   </head>
   <body>
-    <div class="navBar">
-      <ul>
-        <li><a href="#">Experiences</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">About me</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-sm body p-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active mt-0" href="#">Projects</a>
+            <a class="nav-link mt-0" href="#">Experiences</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container-orb mx-auto">
+      <div class="orb mt-0"></div>
     </div>
-    <div class="glowBox"></div>
-    <!-- <img src="./img/cropped.png" alt="profile photo"> -->
-    <div class="content">
+    <div class="content mt-5">
       <h1>Hello! I'm Justin</h1>
       <p>Sophomore in SMU Information System</p>
     </div>
     <br />
     <br />
     <h1 class="content">Projects</h1>
-    <div class="container">
-      <div class="project">
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="card">
+            <div class="img-container mx-auto card-background">
+              <img
+                src="./img/kisspng-bucket-and-spade-spades-clip-art-ace-card-5ac1862ab8a083.5912747615226322347562.png"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+            <div class="card-body">
+              <p class="card-text">Telegram based card game bot</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card">
+            <div class="img-container mx-auto">
+              <img src="./img/ezgif-5-a6a2aaad17.gif" class="card-img-top" alt="..." />
+            </div>
+            <div class="card-body">
+              <p class="card-text">Pygame game dev</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card">
+            <div class="img-container mx-auto">
+              <img src="./img/bus-icon.png" class="card-img-top" alt="..." />
+            </div>
+            <div class="card-body">
+              <p class="card-text">Telegram bus arrival bot</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card">
+            <div class="img-container mx-auto">
+              <img src="./img/bitcoin.png" class="card-img-top" alt="..." />
+            </div>
+            <div class="card-body">
+              <p class="card-text">Telegram bitcoin price alert bot</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="project">
         <a href="https://github.com/dailysponge/discord_playingCardGames">
           <img
             id="poker"
@@ -39,7 +106,7 @@
       <div class="project">
         <a href="https://github.com/dailysponge/pygame_game_development">
           <img id="adventurer" src="./img/ezgif-5-a6a2aaad17.gif" alt="game" />
-          <h4>Pygame game developement</h4>
+          <h4>Pygame game dev</h4>
         </a>
       </div>
       <div class="project">
@@ -53,7 +120,30 @@
           <img id="bitcoin" src="./img/bitcoin.png" alt="" />
           <h4>Bitcoin alert telegram bot</h4>
         </a>
+      </div> -->
+    </div> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="card-special">
+            <div class="img-container">
+              <img src="./img/ezgif-5-a6a2aaad17.gif" alt="">
+            </div>
+            Magic Card
+          </div>
+        </div>
       </div>
     </div>
+    <h1 class="experience">Experiences</h1>
+    <div class="container">
+      <div class="card">
+        <img id="govtech" src="./img/output-onlinegiftools.gif" alt="" />
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
